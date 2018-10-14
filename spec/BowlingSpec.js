@@ -41,11 +41,25 @@ describe('', function() {
 
     it ('should calculate your score', function() {
       bowling.score(9)
-      bowling.turn()
+      bowling.score(7)
       bowling.score(6)
-      bowling.turn()
+      bowling.score(6)
       bowling.currentScore()
-      expect(bowling.updateScore).toEqual(15)
+      expect(bowling.updateScore).toEqual(28)
+    })
+
+    it ('should know if a move is strike', function() {
+      bowling.score(10)
+      bowling.checkStrike()
+      expect(bowling.strike).toEqual(true)
+    })
+
+    it ('should know if a move is strike', function() {
+      bowling.score(8)
+      bowling.turn()
+      bowling.score(2)
+      bowling.checkSpare()
+      expect(bowling.spare).toEqual(true)
     })
 
 })

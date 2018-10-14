@@ -28,3 +28,17 @@ Bowling.prototype.currentScore = function() {
     this.updateScore += this.scores[i];
   };
 };
+
+Bowling.prototype.checkStrike = function(){
+  var scoresLength = this.scores.length
+  if (this.scores[scoresLength-1] === 10 && this.updateTurn === 1){
+    this.strike = true;
+  };
+};
+
+Bowling.prototype.checkSpare = function(){
+  var scoresLength = this.scores.length
+  if ( this.updateTurn === 2 && (this.scores[scoresLength-1] + this.scores[scoresLength-2]) ===10 ){
+    this.spare = true;
+  }
+}

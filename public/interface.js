@@ -7,12 +7,14 @@ $(document).ready(function(){
   $('.scores').on('click', function(data){
     bowling.score(data.currentTarget.innerHTML);
     $('#' + bowling.updateFrame +'-'+ bowling.updateTurn).text(data.currentTarget.innerHTML)
-    console.log(bowling.player)
-    console.log('#' + bowling.updateFrame +'-'+ bowling.updateTurn)
     bowling.turn()
-    console.log(bowling.scores);
-    console.log('#' + bowling.updateFrame +'-'+ bowling.updateTurn)
-    // bowling.updateThrow += 1;
+    bowling.currentScore()
+    console.log(bowling.updateScore);
+    $('#score ' + bowling.updateFrame).text(data.updateScore);
   });
+
+
+
+
 
 });
