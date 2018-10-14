@@ -39,4 +39,13 @@ describe('', function() {
       expect(function() {bowling.turn()}).toThrowError('You have finished the game')
     })
 
+    it ('should calculate your score', function() {
+      bowling.score(9)
+      bowling.turn()
+      bowling.score(6)
+      bowling.turn()
+      bowling.currentScore()
+      expect(bowling.updateScore).toEqual(15)
+    })
+
 })

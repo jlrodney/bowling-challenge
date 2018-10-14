@@ -22,3 +22,9 @@ Bowling.prototype.turn = function() {
     this.updateFrame += 1;
   };
 };
+
+Bowling.prototype.currentScore = function() {
+  for (var i = 0; i < this.scores.length; i++) {
+    this.updateScore += this.scores[i];
+  };
+};
