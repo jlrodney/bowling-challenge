@@ -28,7 +28,15 @@ describe('', function() {
       bowling.score(6)
       bowling.turn()
       expect(bowling.updateTurn).toEqual(1)
-      expect(bowling.updateFrame).toEqual(2)    
+      expect(bowling.updateFrame).toEqual(2)
+    })
+
+    it ('should stop the game after the 10 frame', function() {
+      var times = 20;
+      for(var i=1; i < times; i++){
+        bowling.turn();
+      }
+      expect(function() {bowling.turn()}).toThrowError('You have finished the game')
     })
 
 })
